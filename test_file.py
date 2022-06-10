@@ -1,1 +1,5 @@
-print("hello VERO")
+import pandas as pd
+
+df = pd.read_csv (r'vehicle.csv')
+
+
