@@ -13,9 +13,8 @@ def get_vehicles(*args):
     result = requests.get(url)
 
     # Convert to json
-    df_json = pd.(result)
-    df_json.to_excel('FATAFILE.xlsx')
-    return df_json
+    df_json = result.json()
+    return print(type(df_json))
 
 
 get_vehicles()
