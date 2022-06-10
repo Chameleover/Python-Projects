@@ -14,7 +14,12 @@ def get_vehicles(*args):
 
     # Convert to json
     df_json = result.json()
-    return print(type(df_json))
+
+    # Convert json to xlsx
+    pd.read_json(df_json)
+    xlsx_file = df_json.to_excel('Vehicle_file_test.xlsx')
+
+    return print(type(xlsx_file))
 
 
 get_vehicles()
