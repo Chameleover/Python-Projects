@@ -1,23 +1,11 @@
-Hello dear python dev!
+This is a python project for CS50P. It's main purpose is to scrape predefined news websites, gather articles by keywords and send them to user by demand.
+First version will scrape only text-news and will be executed by .. HOW? ..
 
-This repository is supposed to act as a playground for your submission.
-Before getting started, please make sure to create a new branch (named like your github username) on which you commit and push your code regurarly.
 
-Below, you will find the **Task** definition.
+#What new skills will you need to acquire? What topics will you need to research?
+I need to research web scraping, find a user-friendly way to execute the program, find a friendly way to store the output, and possibly find how to run it on a mobile device.
 
-Happy Hacking :computer:
-
-# Task
-
-Write a python script that connects to a remote API, downloads a certrain set of resources and converts them to a formatted excel file.
-In particular, the script should:
-
-- Take an input parameter --keys/-k that can receive an arbitrary amount of string arguments
-- Request the resources located at `https://api.baubuddy.de/dev/index.php/v1/vehicles/select/active`
-- Store them in an appropriate data structure
-- Filter out any resources that do not have a value set for `hu` field
-- Generate an `.xlsx` file that contains all resources and make sure that:
-   - Rows are sorted by response field `gruppe`
-   - Columns always contain `rnr` field
-   - Only keys that match the input arguments are considered as additional columns (ie. when the script is invoked with `kurzname` and `info`, print two extra columns)
-   - The file should be named `vehicles_$current_date_iso_formatted.xlsx`
+#If working with one or two classmates, who will do what?
+#In the world of software, most everything takes longer to implement than you expect. And so it’s not uncommon to accomplish less in a fixed amount of time than you hope. What might you consider to be a good outcome for your project? A better outcome? The best outcome?
+The deadline is 1 week (15 January). By then I must have a working version of the project, valid for CS50P certificate.
+Later I would improve it by adding mobile version, scraping videos as well, etc.
