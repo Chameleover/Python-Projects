@@ -1,3 +1,8 @@
+    # YOUR PROJECT TITLE
+    #### Video Demo:  <URL HERE>
+    #### Description:
+    TODO
+
 This is a python project for CS50P. It's main purpose is to scrape predefined news websites, gather articles by keywords and send them to user by demand.
 First version will scrape only text-news and will be executed by .. HOW? ..
 
