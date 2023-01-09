@@ -5,8 +5,13 @@ import re
 
 def main():
     kaldata_beauty = get_kaldata_articles()
-
     kaldata_links = convert_beauty_to_links(kaldata_beauty)
+
+    kaldata_dict = {}
+    for i, articles in enumerate(kaldata_links):
+        kaldata_dict[kaldata_beauty[i].get_text()] = kaldata_links[i]
+    print(kaldata_dict)
+
 
 class Newspaper:
     '''Class for each newspaper included in the web scraper

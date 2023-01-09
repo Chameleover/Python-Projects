@@ -1,3 +1,18 @@
+
+# YOUR PROJECT TITLE
+
+#### Video Demo:  <URL HERE>
+#### Description:
+TODO:
+make class NewsPaper.
+create object for each website
+create class NewsArticle and create object for each article
+store news article in iterable data structure, and iterate over them to check for keywords
+if at least 5 keywords in article append it to output.
+send the output to given email
+error handling
+test cases
+
 This is a python project for CS50P. It's main purpose is to scrape predefined news websites, gather articles by keywords and send them to user by demand.
 First version will scrape only text-news and will be executed by .. HOW? ..
 
