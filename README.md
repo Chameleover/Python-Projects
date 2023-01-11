@@ -16,6 +16,12 @@ test cases
 This is a python project for CS50P. It's main purpose is to scrape predefined news websites, gather articles by keywords and send them to user by demand.
 First version will scrape only text-news and will be executed by .. HOW? ..
 
+I used different libraries to perform similar tasks. Firstly I extract web article's urls and titles with BeautifulSoup
+constructor from bs4 library. Then I use Article from newspaper library to get onlty article text. I check the text for
+each article for given keywords, and if found at least #5 matches the article title and url are added to a dict.
+This dict is being formatted and sent to given email address.
+
+
 
 #What new skills will you need to acquire? What topics will you need to research?
 I need to research web scraping, find a user-friendly way to execute the program, find a friendly way to store the output, and possibly find how to run it on a mobile device.

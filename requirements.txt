@@ -1,2 +1,5 @@
 requests~=2.28.1
 beautifulsoup4~=4.11.1
+nltk~=3.8.1
+from newspaper import Article
+csv
