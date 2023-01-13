@@ -4,7 +4,7 @@ import re
 from newspaper import Article
 import csv
 from test_email_outlook import email_new
-from convert_dict_to_excel import convert_dict_to_excel
+from convert_dict_to_excel import create_hyperlinks_file
 
 
 def main():
@@ -17,7 +17,8 @@ def main():
 
     #email_new(kaldata_dict)
     kaldata_links = check_for_keywords(kaldata_dict)
-    print(kaldata_links)
+    create_hyperlinks_file(kaldata_links)
+
 
 class Newspaper:
     '''Class for each newspaper included in the web scraper

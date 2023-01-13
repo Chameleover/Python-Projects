@@ -1,4 +1,4 @@
-import pandas as pd
+import xlsxwriter
 
 #testline:
 my_dict = {
@@ -14,22 +14,17 @@ my_dict = {
     'Срокът за кандидатстване за космическия лагер Space Camp Turkey се удължава': 'https://www.kaldata.com/it-%d0%bd%d0%be%d0%b2%d0%b8%d0%bd%d0%b8/%d0%ba%d0%be%d1%81%d0%bc%d0%be%d1%81/%d1%81%d1%80%d0%be%d0%ba%d1%8a%d1%82-%d0%b7%d0%b0-%d0%ba%d0%b0%d0%bd%d0%b4%d0%b8%d0%b4%d0%b0%d1%82%d1%81%d1%82%d0%b2%d0%b0%d0%bd%d0%b5-%d0%b7%d0%b0-%d0%ba%d0%be%d1%81%d0%bc%d0%b8%d1%87%d0%b5%d1%81-404162.html',
     'Русия ще остави Союз в орбита! Ще издигне нов кораб, който да прибере руските астронавти на Земята': 'https://www.kaldata.com/it-%d0%bd%d0%be%d0%b2%d0%b8%d0%bd%d0%b8/%d1%80%d1%83%d1%81%d0%b8%d1%8f-%d1%89%d0%b5-%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%b8-%d1%81%d0%be%d1%8e%d0%b7-%d0%b2-%d0%be%d1%80%d0%b1%d0%b8%d1%82%d0%b0-%d1%89%d0%b5-%d0%b8%d0%b7%d0%b4%d0%b8%d0%b3%d0%bd-404052.html'}
 
+def create_hyperlinks_file(my_dict):
 
-def convert_dict_to_excel(my_dict):
+    workbook = xlsxwriter.Workbook('news.xlsx')
+    worksheet = workbook.add_worksheet()
+    print("dictionary is being converted to a xlsx file...")
+    for i, (article, link) in enumerate(my_dict.items()):
+        sheet_row = "A" + str(i)
 
-    # convert into dataframe
-    df = pd.DataFrame(data=my_dict, index=[1])
+        worksheet.write_url(sheet_row, link, string=article, tip='open this article')
 
-    # convert to excel
-    df.to_excel("news.xlsx", index=True)
-    #
-    #
-    #
-    #
-    #
-    # # convert into excel
-    # df.to_excel("students.xlsx", index=False)
-    # print("Dictionary converted into excel...")
+    workbook.close()
 
-#testline:
-convert_dict_to_excel(my_dict)
+
+
