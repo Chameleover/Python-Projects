@@ -8,7 +8,7 @@ make class NewsPaper.
 create object for each website
 create class NewsArticle and create object for each article
 store news article in iterable data structure, and iterate over them to check for keywords
-if at least 5 keywords in article append it to output.
+if keyword found, add the article to a new dictionary.
 send the output to given email
 error handling
 test cases

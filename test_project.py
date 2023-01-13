@@ -3,6 +3,8 @@ import requests
 import re
 from newspaper import Article
 import csv
+from test_email_outlook import email_new
+from convert_dict_to_excel import convert_dict_to_excel
 
 
 def main():
@@ -12,10 +14,10 @@ def main():
     kaldata_dict = {}
     for i, articles in enumerate(kaldata_links):
         kaldata_dict[kaldata_beauty[i].get_text()] = kaldata_links[i]
-    # print(kaldata_dict.values())
 
-    print(check_for_keywords(kaldata_dict))
-
+    #email_new(kaldata_dict)
+    kaldata_links = check_for_keywords(kaldata_dict)
+    print(kaldata_links)
 
 class Newspaper:
     '''Class for each newspaper included in the web scraper
