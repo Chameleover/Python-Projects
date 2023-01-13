@@ -3,9 +3,8 @@ import requests
 import re
 from newspaper import Article
 import csv
-from test_email_outlook import email_new
-from convert_dict_to_excel import create_hyperlinks_file
-
+from convert_dict_to_excel import xlsx_to_html
+from send_email import email_new
 
 def main():
     kaldata_beauty = get_kaldata_articles()
@@ -15,9 +14,11 @@ def main():
     for i, articles in enumerate(kaldata_links):
         kaldata_dict[kaldata_beauty[i].get_text()] = kaldata_links[i]
 
-    #email_new(kaldata_dict)
+
     kaldata_links = check_for_keywords(kaldata_dict)
-    create_hyperlinks_file(kaldata_links)
+    html_table = xlsx_to_html()
+    email_new(html_table)
+    #create_hyperlinks_file(kaldata_links)
 
 
 class Newspaper:
@@ -37,34 +38,6 @@ class Newspaper:
         articles = self.get_content().content
         beauty = BeautifulSoup(articles, 'html.parser')
         return beauty
-
-
-def check_for_keywords(article_dict):
-    '''
-    Checks given article dictionary values (links) if they contain given keywords are passed in from file
-    and store title:link in another dictionary
-    :param article_dict:
-    :return:
-    '''
-    # Create an empty dict to store accepted articles
-    dict_of_article_content = {}
-
-    # Iterate over all articles 1 by 1
-    for article_url in article_dict.values():
-
-        # Extract only article content from the web page
-        article = Article(article_url)
-        article.download()
-        article.parse()
-        article_to_list = list(article.text.split(' '))
-        keywords = get_keywords()
-
-        # Store each article, containing a keyword in a new dict
-        if any(word in keywords for word in article_to_list):
-            print(f"Article: \"{article.title}\" stored")
-            dict_of_article_content[article.title] = article_url
-
-    return dict_of_article_content
 
 
 def get_kaldata_articles():
@@ -97,12 +70,41 @@ def convert_beauty_to_links(beauty: list):
     return list_of_articles
 
 
+def check_for_keywords(article_dict):
+    '''
+    Checks given article dictionary values (links) if they contain given keywords are passed in from file
+    and store title:link in another dictionary
+    :param article_dict:
+    :return:
+    '''
+    # Create an empty dict to store accepted articles
+    dict_of_article_content = {}
+
+    # Iterate over all articles 1 by 1
+    for article_url in article_dict.values():
+
+        # Extract only article content from the web page
+        article = Article(article_url)
+        article.download()
+        article.parse()
+        article_to_list = list(article.text.split(' '))
+        keywords = get_keywords()
+
+        # Store each article, containing a keyword in a new dict
+        if any(word in keywords for word in article_to_list):
+            print(f"Article: \"{article.title}\" stored")
+            dict_of_article_content[article.title] = article_url
+
+    return dict_of_article_content
+
+
 def get_keywords():
     file = open("article_keywords.csv", "r")
     data = list(csv.reader(file))
     file.close()
     # list(csv.reader(file)) stores list within the 0 element of a list. So we need to return the 0 element
     return data[0]
+
 
 
 if __name__ == "__main__":

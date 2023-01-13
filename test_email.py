@@ -1,12 +1,12 @@
+
 import creds
 from email.message import EmailMessage
-import ssl
 import smtplib
 
 
 def send_email(news_dict):
     message = EmailMessage()
-    message['Subject'] = "New Data from Today"
+    message['Subject'] = "New Data from Today test_email.py"
     message['From'] = creds.sender
     message['To'] = creds.recipient
     body = '''
