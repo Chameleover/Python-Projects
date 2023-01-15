@@ -19,26 +19,26 @@ P.P.S in test_project.py can't be implemented hardcoded test cases as we used to
 for now the file is with empty functions. Test cases will be implemented later
 
 #### TODO:
-make class NewsPaper.
-create object for each website
-store news article in iterable data structure, and iterate over them to check for keywords
-if keyword found, add the article to a new dictionary.
-convert dictionary to html table, which could look good in email body
-send the output to given email
-error handling
-test cases
-add ignore case on keywords comparison
+- make class NewsPaper.
+- create object for each website
+- store news article in iterable data structure, and iterate over them to check for keywords
+- if keyword found, add the article to a new dictionary.
+- convert dictionary to html table, which could look good in email body
+- send the output to given email
+- error handling
+- test cases
+- add ignore case on keywords comparison
 
 
 
 
 #### What new skills will you need to acquire? What topics will you need to research?
--web scraping; 
--getting article and links from parsed html; 
--converting dict to xlsx;
--converting xlsx to html table; 
--embedding html body in email; 
--send am email;
+- web scraping; 
+- getting article and links from parsed html; 
+- converting dict to xlsx;
+- converting xlsx to html table; 
+- embedding html body in email; 
+- send am email;
 
 
 #### In the world of software, most everything takes longer to implement than you expect. And so it’s not uncommon to accomplish less in a fixed amount of time than you hope. What might you consider to be a good outcome for your project? A better outcome? The best outcome?
