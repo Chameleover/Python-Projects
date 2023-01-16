@@ -1,7 +1,9 @@
 
 # Web Newscraper
 
-#### Video Demo:  <URL HERE>
+### by Filip Andonov, Bulgaria, Blagoevgrad
+
+#### Video Demo:  https://youtu.be/s4nZ6pNX5j0
 #### Description: 
 This is a python project created for CS50P. It's main purpose is to scrape predefined news websites, gather articles by 
 keywords and send them to user by demand.
