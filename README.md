@@ -45,6 +45,13 @@ for now the file is with empty functions. Test cases will be implemented later
 
 #### In the world of software, most everything takes longer to implement than you expect. And so it’s not uncommon to accomplish less in a fixed amount of time than you hope. What might you consider to be a good outcome for your project? A better outcome? The best outcome?
 The deadline is 1 week (15 January). By then I must have a working version of the project, valid for CS50P certificate.
+
+
+Later I would improve it by adding mobile version, scraping videos as well, etc.
+  
+  
+#BGN
+=======
 Later I would improve it by adding more websites and a mobile version.
 
 
